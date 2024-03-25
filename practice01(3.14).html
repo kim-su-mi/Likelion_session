@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likelion login</title>
+    <link rel="stylesheet" href="practice01(3.14).css">
+</head>
+<body>
+    <div id="big-container">
+        <a href="http://www.codelion.net" target="_blank">멋쟁이 사자처럼 바로가기</a>
+        <img src="./Likelion-log.png" alt="Likelion-log" width="100%"/>
+        <h1>회원가입</h1>
+        <form action="#" method="post">
+            <fieldset>
+                <legend>기본정보</legend>
+                <label for="user-id">아이디:</label>
+                <input type="text" placeholder="아이디는 8자 이상입니다" id="user-id"><br>
+                
+                <label for="user-pw">비밀번호: </label>
+                <input type="password" placeholder="비밀번호는 10자 이상입니다" id="user-pw"><br>
+                
+                <label>성별 :</label> 
+                <label for="gender-woman">여자</label> 
+                <input name="gender" type="radio" value="woman" id="gender-woman" checked>
+                <label for="gender-man">남자</label> 
+                <input name="gender" type="radio" value="man" id="gender-man">
+            </fieldset>
+            <fieldset>
+                <legend>부가 정보</legend>
+                <label>취미 : </label>
+                <label for="hobby-movie">영화감상</label>
+                <input type="checkbox" name="hobby" value="movie" id="hobby-movie">
+                <label for="hobby-music">음악감상</label>
+                <input type="checkbox" name="hobby" value="music" id="hobby-music">
+                <label for="hobby-book">독서</label>
+                <input type="checkbox" name="hobby" value="book" id="hobby-book">
+                <label for="hobby-pt">운동</label>
+                <input type="checkbox" name="hobby" value="pt" id="hobby-pt">
+                <br>
+
+                프로필 사진: <input type="file"><br>
+                사는 지역 : 
+                <select>
+                    <option value="1" >서울</option>
+                    <option value="2" selected>경기</option>
+                    <option value="3">인천</option>
+                    <option value="4">부산</option>
+                    <option value="5">대구</option>
+                    <option value="6">대전</option>
+                </select>
+                <br>
+                자기소개: <textarea cols="50" rows="5" placeholder="가벼운 자기소개를 입력해주세요"></textarea>
+                <br>
+                <button type="submit" id="btn_submit">가입하기</button>
+                <button type="reset" id="btn_reset">다시작성</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

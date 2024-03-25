@@ -1,0 +1,30 @@
+#big-container{
+    border: 10px solid orange;
+    padding: 30px;
+} 
+
+h1{
+    text-align: center;
+}
+
+/* a태그 링크 기본 색깔 */
+a:link{
+    color: orange;
+}
+/* 방문한 적이 있는 a태그 색깔*/
+a:visited{
+    color: gray;
+}
+
+#btn_submit{
+    background-color: orange;
+    color: white;
+    width: 7em;
+    height: 3em;
+}
+#btn_reset{
+    background-color: gray;
+    color: white;
+    width: 7em;
+    height: 3em;
+}
