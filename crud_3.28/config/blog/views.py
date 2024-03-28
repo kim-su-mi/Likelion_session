@@ -8,7 +8,6 @@ def create(request):
     
         new_blog.title = request.POST['title']
         new_blog.content = request.POST['content']
-        new_blog.created_at = request.POST['created_at']
 
         new_blog.save()
 
