@@ -1,6 +1,17 @@
 <h1>블로그 상세페이지</h1>
 <br/>
 <hr/>
-<h2>{{blog.title}}</h2>
-<p>{{blog.content}}</p>
-<p>{{blog.created_at}}</p>
+<table border="1">
+    <tr>
+        <td>제목</td>
+        <td>내용</td>
+        <td>날짜</td>
+    </tr>
+{% for blog in blogs %}
+    <tr> 
+        <td>{{blog.title}}</td>
+        <td>{{blog.content}}</td>
+        <td>{{blog.created_at}}</td>
+    </tr>
+    {% endfor %}
+</table>

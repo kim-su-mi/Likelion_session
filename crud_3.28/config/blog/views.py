@@ -14,7 +14,10 @@ def create(request):
         return redirect('detail',new_blog.id)
     return render(request,'new.html')
 
-def detail(request,blog_id):
-    blog = get_object_or_404(Blog,pk=blog_id)
+# def detail(request,blog_id):
+#     blog = get_object_or_404(Blog,pk=blog_id)
+#     return render(request, 'detail.html',{'blog':blog})
 
-    return render(request, 'detail.html',{'blog':blog})
+def detail(request,blog_id):
+    blogs = Blog.objects.all() #모든 게시글 가져오기
+    return render(request, 'detail.html',{'blogs':blogs})
