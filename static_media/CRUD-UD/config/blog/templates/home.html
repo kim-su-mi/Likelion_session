@@ -1,0 +1,42 @@
+{% extends "base.html" %} <!--맨위에 나와야 오류안남-->
+{% load static %} <!--static파일 띄우기 위해-->
+
+{% block title %}
+수미 블로그 home
+{% endblock title %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+{% endblock extrahead%}
+
+{% block content%}
+
+<img src="{% static 'cat.png'%}" width="100" height="100" class="logo">
+<h1>LIKELION 11 Blog Project</h1>
+<a href="{%url 'new'%}">새 글 작성하기</a><!--이거 누르면 new라는 이름을 가진 url로 이동-->
+<div>
+    {% for blog in page_obj %}
+    <a href="{%url 'detail' blog.id%}">
+        <h2>{{blog.title}}</h2>
+        <p>{{blog.summary}}</p>
+        <p>{{blog.created_at}}</p>
+    </a>
+    {% endfor %}
+</div>
+<span>
+    {% if page_obj.has_previous %}
+    <a href="?page=1">처음으로</a>
+    <a href="?page={{ page_obj.previous_page_number}}">이전</a> <!--url 파라이터로 받은 수의 바로 이전 값으로 이동-->
+    {% endif %}
+
+    <span>{{page_obj.number}}</span> <!--현재 페이지 수-->
+    <span>/</span>
+    <span>{{ page_obj.paginator.num_pages }}</span> <!--페이지의 총 숫자-->
+
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">다음</a>
+    <a href="?page={{ page_obj.paginator.num_pages }}">마지막으로</a>
+    {% endif %}
+
+</span>
+{% endblock content %}

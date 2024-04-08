@@ -1,0 +1,9 @@
+<h1>edit 페이지</h1>
+
+<form action="{% url 'update' edit_blog.id %}" method="POST" enctype="multipart/form-data"> <!--update라는 별명가진 url로 가는데 edit_blog.id이 값고 같이 넘겨줘라-->
+    {% csrf_token %}
+    <input type="text" name="title" value="{{ edit_blog.title }}"/>
+    <textarea name="content" id="" cols="30">{{ edit_blog.content }}</textarea>
+    <input type="file" name="image">
+    <input type="submit" value="수정하기" />
+</form>
